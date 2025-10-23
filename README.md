@@ -1,77 +1,47 @@
-# Simulating Payout Policy Changes
-
-## How Lower Payout Thresholds Can Impact Small Creator Earnings & Retention
-
----
-
-## Project Overview
-
-This project explores how lowering the minimum payout threshold for creators on a digital content platform could impact their average earnings and retention. Many online platforms pay creators once they reach a certain minimum threshold (for example, $100). For smaller creators, reaching this threshold can take months delaying their payouts and potentially affecting their motivation to keep producing content.
-
-This project uses simulated data to estimate the **causal effect** of lowering the payout threshold using a **Difference-in-Differences (DiD)** approach — a common method for measuring policy impacts when random A/B testing may not be practical.
+# Simulating Payout Policy Changes  
+### How Lower Payout Thresholds Can Impact Small Creator Earnings & Retention  
 
 ---
 
-## Business Context
+##  Overview  
 
-Many creator platforms (streaming services, digital marketplaces) set payout thresholds to limit transaction costs and simplify payment processing. But a higher threshold can create cash flow delays for smaller creators, leading to potential frustration and churn.
+This project explores how lowering the minimum payout threshold (e.g., $100 → $50) could affect small creators’ **earnings and retention**.  
 
-A product or payments team might ask:
-**“What would happen if we lowered our payout threshold from $100 to $50? Would more small creators stay active? Would it meaningfully increase their monthly income?”**
-
----
-
-## Why Not A/B Test This?
-
-Unlike simple feature tests, payout policy changes directly affect real money, so randomizing who gets paid sooner vs. later is often impractical or unfair. Instead, platforms often roll out the policy universally, then use quasi-experimental methods like **Difference-in-Differences** to measure its impact.
+I chose this topic because smaller creators often wait months to hit payout minimums delaying their income and motivation. This simulation models how a lower threshold might improve engagement and earnings using a **Difference-in-Differences (DiD)** approach.
 
 ---
 
-## Project Goals
+##  Key Insights  
 
-* Simulate realistic monthly payout data for 1,000 creators over 12 months.
-* Create cohorts: small creators likely affected vs. larger creators unlikely to be affected.
-* Simulate a policy change in mid-year that lowers the payout threshold.
-* Apply Difference-in-Differences to estimate the impact on earnings and retention.
-* Visualize trends and results using **Python** and **Tableau**.
-* Deliver a clear one-page memo summarizing findings.
-
----
-
-## Methodology
-
-**Data Simulation**
-
-* 1,000 creators with unique earning levels, streaming hours, viewer counts, and regions.
-* Monthly earnings fluctuate naturally.
-* Small creators earning $50–$100 per month are the **treated group** — they benefit from the new lower threshold.
-* Larger creators earning $100–$150 are the **control group** — already above the threshold, so mostly unaffected.
-* After the policy change mid-year, treated creators receive a simulated **10% earnings boost** to mimic earlier payouts encouraging more activity.
-
-**Analysis**
-
-* Use Python (`pandas`, `numpy`) for simulation and cohort tagging.
-* Apply **Difference-in-Differences** logic to estimate the average treatment effect.
-* Visualize trends over time using `matplotlib` and `seaborn`.
-* Export the dataset to CSV for **Tableau** dashboards.
+- **Simulated** 1,000 creators over 12 months (earnings, activity, region).  
+- **Treated Group:** Small creators earning $50–$100/month.  
+- **Control Group:** Larger creators earning $100–$150/month.  
+- After the mid-year policy change, treated creators’ average earnings rose by **$8–$10/month** while maintaining **~100% activity**.  
+- Control group stayed flat → suggests **earlier payouts improve engagement** without hurting performance.
 
 ---
 
-## Visualization
+##  Visualization  
 
-You can explore the interactive Tableau dashboard here:
-👉 [**Policy Impact on Creator Earnings (2023)** – Tableau Workbook (.twbx)](policy_impact_db.twbx)
+👉 [**Tableau Dashboard – Policy Impact on Creator Earnings (2023)**](policy_impact_db.twbx)  
 
 ![Policy Impact on Creator Earnings (2023)](DiD_policypayoutchange.png)
 
-**Interpretation:**
-After the policy went live, the treated cohort saw average earnings jump by $8–$10 per month while maintaining near-100 % activity. The control group showed no comparable change, suggesting the policy **boosted payouts without hurting engagement.**
+---
+
+##  Tools Used  
+
+**Python:** `pandas`, `numpy`, `matplotlib`, `seaborn`  
+**Visualization:** Tableau  
+**Method:** Difference-in-Differences (Causal Inference)
 
 ---
 
-## Why This Matters
+##  Conclusion  
 
-This project shows how to **measure policy impact** in situations where traditional A/B testing isn’t feasible. It demonstrates practical **causal inference** and **data visualization** skills relevant to roles in product analytics, payments, policy measurement, and marketplace data science.
+Lowering the payout threshold increased small creator earnings by roughly **10%** without reducing activity rates.  
+This suggests that **earlier payouts can enhance creator satisfaction and retention** at minimal risk to platform performance — a valuable insight for product and payments teams designing creator monetization policies.
 
-I wanted to explore how thoughtful payout design can make a tangible difference for smaller creators, helping them feel more rewarded and supported on the platforms they love.
+##  Why It Matters  
 
+This project demonstrates how **causal analysis** can guide **real-world policy changes** when A/B testing isn’t possible, blending product strategy, analytics, and data science to make platforms fairer for small creators.
