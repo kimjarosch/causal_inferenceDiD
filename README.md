@@ -36,7 +36,7 @@ Using a **Difference-in-Differences (DiD)** causal inference framework, I estima
 
 👉 [**Tableau Public Dashboard — Policy Impact on Creator Earnings (2023)**](https://public.tableau.com/app/profile/kimberly.jarosch/viz/policy_impact_db/PolicyImpactDashboard?publish=yes)
 
-![Policy Impact Dashboard](policy_impactDB.png)
+![Policy Impact Dashboard](DiD_policypayoutchange.png)
 
 The dashboard shows monthly average earnings and activity rates by cohort, with a marked policy change line at July 1, 2023. Region filters (US, EU, Asia) allow drill-down by geography with roughly even distribution across ~4,000 creators per region.
 
